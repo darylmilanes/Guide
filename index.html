@@ -30,12 +30,13 @@
         top: 0;
         left: 0;
         width: 275px;
-        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
         background: var(--card-bg, #fff);
         z-index: 1400;
         transform: translateX(-100%);
         box-shadow: 2px 0 12px rgba(0,0,0,0.12);
         overflow-y: auto;
+        padding-bottom: calc(env(safe-area-inset-bottom, 5px) + 5rem);
       }
 
       /* When body has toc-open, slide it in */
