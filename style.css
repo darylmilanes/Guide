@@ -95,6 +95,7 @@ header { position: relative; }
 .content {
   flex: 1;
   padding: 2rem;
+  padding-bottom: 6rem; /* increased bottom space so content doesn't sit flush with viewport bottom */
   overflow-y: auto;
   background: var(--bg);
 }
@@ -179,14 +180,20 @@ button:hover {
   font-style: italic;
   font-weight: 700;
   letter-spacing: 0.6px;
-  font-size: 3rem;
+  font-size: 4rem;
   text-shadow: 0 1px 0 rgba(0,0,0,0.12);
 }
 
 @media (max-width: 900px) {
   .main { flex-direction: column; padding: 0 16px; }
   .toc { width: 100%; border-right: none; border-bottom: 1px solid var(--border); min-width: 0; }
-  .content { padding: 1rem 0; }
+  .content {
+    padding: 1rem 0;
+    padding-bottom: 5rem; /* increased bottom gutter for narrow screens */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+  .content::-webkit-scrollbar { display: none; } /* Chrome, Safari, Opera */
 }
 
 @media (max-width: 480px) {
@@ -195,12 +202,13 @@ button:hover {
   body { font-size: 14px; }
 
   /* Header text sizes */
-  .site-title { font-size: 2.5rem; }
+  .site-title { font-size: 3.5rem; }
   .tagline, .host { font-size: 0.75rem; }
 
   /* TOC and content padding reductions */
   .toc { padding: 10px 12px; }
-  .content { padding: 12px; }
+  .content { padding: 12px; padding-bottom: 4rem; -ms-overflow-style: none; scrollbar-width: none; }
+  .content::-webkit-scrollbar { display: none; }
 
   /* Reading area adjustments */
   .content .reading { max-width: 100%; padding: 0; }
