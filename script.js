@@ -129,8 +129,12 @@ document.addEventListener("DOMContentLoaded", () => {
         <h2>Welcome to <span>Guide</span></h2>
         <p><strong>Guide</strong> is a gentle reading companion designed to help you engage thoughtfully with the life and teachings of Jesus. Each topic pairs Scripture with concise explanations, guided questions, and short reflections so you can read with clarity and grow in understanding.</p>
         <p>Use the table of contents to choose a topic. Passages, explanations, and reflection prompts will appear in the main reading area. These materials are suitable for personal study, small groups, or quiet contemplation.</p>
-        <p>For further reading, you can also visit "Discover", a website that provides reliable, well-researched explanations of Scripture to help you explore the Bible with clarity and depth.</p>
-        <p><a href="https://discover.darylmilanes.com" class="discover-btn" target="_blank" rel="noopener noreferrer"><strong>Discover: A Library for Curiosity</strong></a></p>
+
+        <div class="discover-container">
+          <p>For further reading, you can also visit "Discover", a website that provides reliable, well-researched explanations of Scripture to help you explore the Bible with clarity and depth.</p>
+          <p><a href="https://discover.darylmilanes.com" class="discover-btn" target="_blank" rel="noopener noreferrer"><strong>Discover: A Library for Curiosity</strong></a></p>
+        </div>
+
       </div>`;
   }
 
