@@ -98,6 +98,13 @@ document.addEventListener("DOMContentLoaded", () => {
       </article>
     `;
 
+    // Ensure content shows its top on narrow screens so users see the beginning of the article
+    if (window.matchMedia('(max-width: 900px)').matches) {
+      try { content.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { content.scrollTop = 0; }
+    } else {
+      content.scrollTop = 0;
+    }
+
     // Auto-close TOC on mobile after rendering content
     maybeCloseTOC();
   }
