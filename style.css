@@ -198,6 +198,13 @@ button:hover {
 
 .discover-btn:hover { filter: brightness(0.96); transform: translateY(-1px); }
 
+.discover-container {
+  background: #e6f7ff; /* soft sky blue */
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+}
+
 @media (max-width: 900px) {
   .main { flex-direction: column; padding: 0 16px; }
   .toc { width: 100%; border-right: none; border-bottom: 1px solid var(--border); min-width: 0; }
