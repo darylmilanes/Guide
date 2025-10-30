@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="A Steady Compass for the Soul — a reading guide to the life and teachings of Jesus Christ.">
+  <title>Guide – A Steady Compass for the Soul</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Prevent iPhone auto-zoom on inputs -->
+  <style>
+    input, textarea, select, button { font-size: 16px; }
+
+    /* Reduced header height and smaller title/tagline */
+    .header { padding: 8px 0; position: relative; }
+    .header .header-content { max-width: 980px; margin: 0 auto; padding: 6px 12px; }
+    .site-title { font-size: 1.25rem; margin: 0; line-height: 1; }
+    .tagline, .host { font-size: 0.85rem; margin: 0; }
+
+    /* TOC slide-in for narrow screens */
+    .toc { transition: transform 0.28s ease, box-shadow 0.28s ease; }
+    /* hide toggle by default; it will be positioned to the left of the header when shown */
+    .toc-toggle { display: none; position: absolute; left: 12px; top: 50%; transform: translateY(-50%); background: transparent; border: none; font-size: 1.25rem; padding: 8px 10px; cursor: pointer; }
+    .toc-overlay { display: none; }
+
+    @media (max-width: 900px) {
+      /* Hide TOC off-canvas by default */
+      .toc {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 275px;
+        height: 100vh;
+        background: var(--card-bg, #fff);
+        z-index: 1200;
+        transform: translateX(-100%);
+        box-shadow: 2px 0 12px rgba(0,0,0,0.12);
+        overflow-y: auto;
+      }
+
+      /* When body has toc-open, slide it in */
+      body.toc-open .toc { transform: translateX(0); }
+
+      /* Show a small hamburger control in the header */
+      .toc-toggle { display: inline-block; }
+
+      /* Dark overlay behind the TOC when open */
+      .toc-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.35);
+        z-index: 1100;
+      }
+
+      body.toc-open .toc-overlay { display: block; }
+
+      /* Ensure main content stays full-width under the overlay */
+      .main { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <h1 class="site-title">Guide</h1>
+      <p class="tagline">A Spiritual Compass</p>
+      <!-- Hamburger toggle for small screens -->
+      <button id="tocToggle" class="toc-toggle" aria-label="Open table of contents">☰</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <aside class="toc" id="toc">
+      <!-- Table of Contents dynamically inserted from data.js -->
+    </aside>
+
+    <section class="content" id="content">
+      <div class="welcome">
+        <h2>Welcome to <span>Guide</span></h2>
+        <p>Explore the life, teachings, and miracles of Jesus Christ. Each section contains Scripture, explanations, and reflections to help you grow in faith.</p>
+        <p>Select a topic from the table of contents to begin reading.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Overlay used on narrow screens when the TOC is open -->
+  <div id="tocOverlay" class="toc-overlay" aria-hidden="true"></div>
+
+  <!-- footer removed per user request -->
+
+  <script src="data.js"></script>
+  <script src="content.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
