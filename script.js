@@ -1,6 +1,20 @@
 // script.js
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Set --vh to fix mobile browser UI height issues (mobile Chrome bottom bar)
+  function setVh() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
+  setVh();
+  // Update on resize and when visualViewport changes (for Chrome's UI show/hide)
+  window.addEventListener('resize', setVh);
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', setVh);
+    window.visualViewport.addEventListener('scroll', setVh);
+  }
+
   const toc = document.getElementById("toc");
   const content = document.getElementById("content");
   const year = document.getElementById("year");
