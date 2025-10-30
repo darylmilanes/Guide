@@ -184,6 +184,20 @@ button:hover {
   text-shadow: 0 1px 0 rgba(0,0,0,0.12);
 }
 
+/* New styles for the Discover button in the welcome area */
+.discover-btn {
+  display: inline-block;
+  background: #004080; /* updated to match header deep blue */
+  color: #fafeff;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(0,64,128,0.12);
+}
+
+.discover-btn:hover { filter: brightness(0.96); transform: translateY(-1px); }
+
 @media (max-width: 900px) {
   .main { flex-direction: column; padding: 0 16px; }
   .toc { width: 100%; border-right: none; border-bottom: 1px solid var(--border); min-width: 0; }
